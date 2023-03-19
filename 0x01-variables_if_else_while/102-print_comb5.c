@@ -3,38 +3,30 @@
 /**
  * main - Entry point
  *
- * print combinations of two two-digits numbers
+ * prints coombinations of two two-digit numbners
  *
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-	int i = '0';
-	int j = '0';
-	int k = '0';
-	int l = '1';
+	int i;
+	int j;
 
-	for (i = '0'; i <= '9'; i++)
+	for (i = 0; i <= 99; i++)
 	{
-		for (j = '0'; j <= '8'; j++)
+		for (j = i; j <= 99; j++)
 		{
-			for (k = '0'; k <= '9'; k++)
+			if (i == j)
+				continue;
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
+			if (i != 98 || j != 99)
 			{
-				for (l = '1'; l <= '9'; l++)
-				{
-					if (i <= k && j < l)
-					{
-						putchar(i);
-						putchar(j);
-						putchar(' ');
-						putchar(k);
-						putchar(l);
-						if ((i + j) != ('9' + '8') || (k + l) != ('9' + '9'))
-						{
-							putchar(',');
-							putchar(' ');
-						}
-					}
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
