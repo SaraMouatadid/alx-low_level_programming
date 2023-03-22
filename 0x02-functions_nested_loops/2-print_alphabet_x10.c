@@ -15,6 +15,7 @@ void print_alphabet_x10(void)
 		while (a >= 'a' && a <= 'z')
 		{
 			_putchar(a);
+			a++;
 		}
 		_putchar('\n');
 	}
